@@ -1,0 +1,38 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar-left img {
+    width: 100px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.navbar-left p {
+    margin-right: 15px;
+}
+
+.navbar-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar-list li {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.navbar-list a {
+    margin-right: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
