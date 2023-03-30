@@ -9,7 +9,8 @@ const projectsSlice = createSlice({
                 id: 1,
                 title: "Show Case",
                 description: "A small web application that lets manage the list of showcased works",
-                image: showcase
+                image: showcase,
+                website: "https://veziv.ro/"
             },
         ],
     },
@@ -23,13 +24,14 @@ const projectsSlice = createSlice({
                     title: newProject.title,
                     description: newProject.description,
                     image: newProject.image,
+                    website: newProject.website,
                 })
             }
             console.log(state.project)
         },
-        setProjectsEdited(state, action) {
+        // setProjectsEdited(state, action) {
 
-        }
+        // }
     }
 })
 

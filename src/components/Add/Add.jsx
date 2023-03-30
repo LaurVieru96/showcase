@@ -16,22 +16,37 @@ const Add = () => {
   const [workTitle, setWorkTitle] = useState("");
   const [workDescription, setWorkDescription] = useState("");
   const [workImage, setWorkImage] = useState("");
+  const [workWebsite, setWorkWebsite] = useState("");
 
-  const notify = () => toast("Project Uploaded!", { pauseOnHover: false });
+  // const notify = () => toast("Project Uploaded!", { pauseOnHover: false });
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(workTitle);
-    console.log(workDescription);
-    console.log(workImage);
+    // console.log(workTitle);
+    // console.log(workDescription);
+    // console.log(workImage);
+
+    if (workDescription.length < 15) {
+      toast.error("Description must be at least 15 characters long!");
+      return;
+    }
+
     dispatch(
       projectsActions.setProjectsList({
         id: uuidv4(),
         title: workTitle,
         description: workDescription,
         image: workImage,
+        website: workWebsite,
       })
     );
+
+    toast.success("Project Uploaded!", { pauseOnHover: false });
+
+    setWorkTitle("");
+    setWorkDescription("");
+    setWorkImage("");
+    setWorkWebsite("");
   };
 
   return (
@@ -51,6 +66,7 @@ const Add = () => {
               <textarea
                 name=""
                 id=""
+                maxLength={90}
                 cols="30"
                 rows="10"
                 placeholder="Describe your work"
@@ -58,6 +74,12 @@ const Add = () => {
                 onChange={(e) => setWorkDescription(e.target.value)}
                 required
               ></textarea>
+              <input
+                type="url"
+                placeholder="Add your website link"
+                value={workWebsite}
+                onChange={(e) => setWorkWebsite(e.target.value)}
+              />
               <div className="add-file">
                 <input
                   type="file"
@@ -78,9 +100,9 @@ const Add = () => {
             </div>
           </div>
           <button
-            onClick={
-              workTitle && workDescription && workImage ? notify : undefined
-            }
+            // onClick={
+            //   workTitle && workDescription && workImage ? notify : undefined
+            // }
             type="submit"
           >
             Submit
