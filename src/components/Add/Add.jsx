@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Add.css";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useDispatch } from "react-redux";
 import { projectsActions } from "../../store/projects-slice";
+
+import { useNavigate } from "react-router-dom";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -19,6 +21,8 @@ const Add = () => {
   const [workWebsite, setWorkWebsite] = useState("");
 
   // const notify = () => toast("Project Uploaded!", { pauseOnHover: false });
+
+  const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -47,6 +51,10 @@ const Add = () => {
     setWorkDescription("");
     setWorkImage("");
     setWorkWebsite("");
+
+    setTimeout(() => {
+      navigate("/projects");
+    }, 3000);
   };
 
   return (

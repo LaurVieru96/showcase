@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./Projects.css";
 import { useDispatch, useSelector } from "react-redux";
 import { projectsActions } from "../../store/projects-slice";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const dispatch = useDispatch();
   const projects = useSelector((state) => state.projects.project);
-  console.log(projects);
+  // console.log(projects);
 
   const deleteProject = (id) => {
     dispatch(projectsActions.deleteProject(id));
@@ -53,7 +54,9 @@ const Projects = () => {
               </div>
               <div className="projects-buttons">
                 <button onClick={() => hideProject(work.id)}>Hide</button>
-                <button>Edit</button>
+                <button>
+                  <Link to={`/edit/${work.id}`}>Edit</Link>
+                </button>
                 <button onClick={() => deleteProject(work.id)}>Delete</button>
               </div>
             </div>
