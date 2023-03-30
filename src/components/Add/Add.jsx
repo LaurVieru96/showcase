@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Add = () => {
-  const [uploadPhoto, setUploadPhoto] = useState(null);
+  const [uploadPhoto] = useState(null);
   const [workTitle, setWorkTitle] = useState("");
   const [workDescription, setWorkDescription] = useState("");
   const [workImage, setWorkImage] = useState("");
@@ -70,7 +70,11 @@ const Add = () => {
           >
             Submit
           </button>
-          <ToastContainer position="top-center" theme="dark" />
+          <ToastContainer
+            position="top-center"
+            theme="dark"
+            style={{ marginTop: "80px" }}
+          />
         </form>
       </div>
     </>
