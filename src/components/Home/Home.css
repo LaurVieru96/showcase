@@ -1,0 +1,29 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #9c9c9c8a;
+    background-image: url(../../assets/background.jpg);
+    background-size: cover;
+}
+
+.home-container h1 {
+    padding: 55px;
+    background-color: #000000;
+    border: 3px solid #E7AE22;
+    text-decoration: underline;
+    text-decoration-color: #E7AE22;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .home-container h1 {
+        font-size: 2rem;
+        padding: 25px;
+    }
+}

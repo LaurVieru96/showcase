@@ -7,7 +7,9 @@ const Navbar = () => {
     <>
       <div className="navbar-container">
         <div className="navbar-left">
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
           <p>Your showcase</p>
         </div>
         <div className="navbar-right">

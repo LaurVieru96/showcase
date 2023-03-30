@@ -4,13 +4,16 @@
     align-items: center;
     background-color: #000;
     color: #fff;
+    height: 80px;
+    width: 100%;
+    position: fixed;
 }
 
 .navbar-left {
     display: flex;
 }
 
-.navbar-left img {
+.navbar-left a img {
     width: 100px;
     cursor: pointer;
     margin-right: 15px;
@@ -18,6 +21,7 @@
 
 .navbar-left p {
     margin-right: 15px;
+    text-align: center;
 }
 
 .navbar-list {
@@ -30,9 +34,24 @@
     cursor: pointer;
 }
 
+.navbar-list a:hover {
+    color: #E7AE22;
+}
+
 .navbar-list a {
     margin-right: 15px;
     cursor: pointer;
     text-decoration: none;
     color: #fff;
+}
+
+
+@media only screen and (max-width:450px) {
+    .navbar-left p {
+        display: none
+    }
+
+    .navbar-list {
+        margin-left: 5px;
+    }
 }
