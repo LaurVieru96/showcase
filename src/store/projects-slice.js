@@ -48,26 +48,6 @@ const projectsSlice = createSlice({
                 state.project.splice(index, 1);
             }
         },
-        // updateProject(state, action) {
-
-
-
-        //     state.project.map((project) => {
-        //         console.log(project.id);
-        //         console.log(project.title)
-        //         console.log(action.payload.id)
-        //         if (project.id === action.payload.id) {
-        //             return {
-        //                 ...project,
-        //                 title: action.payload.title,
-        //                 description: action.payload.description,
-        //                 image: action.payload.image,
-        //                 website: action.payload.website,
-        //             };
-        //         }
-        //         return project;
-        //     })
-        // }
         updateProject(state, action) {
             const { id, title, description, image, website } = action.payload;
             const index = state.project.findIndex((project) => project.id === id);

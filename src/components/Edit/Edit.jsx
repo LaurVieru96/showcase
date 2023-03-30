@@ -13,16 +13,9 @@ const Edit = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
-  console.log(params);
 
   const projects = useSelector((projects) => projects.projects.project);
-  console.log(projects);
-
   const existingProject = projects.filter((proj) => proj.id === params.id);
-  console.log(existingProject);
-
-  const [workImage, setWorkImage] = useState("");
-
   const { title, description, website, image } = existingProject[0];
   const [values, setValues] = useState({
     title,
@@ -33,8 +26,6 @@ const Edit = () => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    // setValues({ title: "", description: "", website: "", image: "" });
-
     dispatch(
       projectsActions.updateProject({
         id: params.id,
@@ -45,7 +36,6 @@ const Edit = () => {
       })
     );
     toast("Project Edited!", { pauseOnHover: false });
-
     setTimeout(() => {
       navigate("/projects");
     }, 3000);
@@ -86,16 +76,6 @@ const Edit = () => {
                   setValues({ ...values, website: e.target.value })
                 }
               />
-              <div className="add-file">
-                <input
-                  type="file"
-                  //   value={image}
-                  onChange={(e) =>
-                    setWorkImage(URL.createObjectURL(e.target.files[0]))
-                  }
-                  required
-                />
-              </div>
             </div>
           </div>
           <button type="submit">Update Details</button>
