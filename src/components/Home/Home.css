@@ -17,13 +17,15 @@
     text-decoration-color: #E7AE22;
     font-size: 3.5rem;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: sans-serif;
     color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {
     .home-container h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 25px;
     }
 }

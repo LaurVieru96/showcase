@@ -83,6 +83,7 @@ const Add = () => {
               <div className="add-file">
                 <input
                   type="file"
+                  // value={workImage}
                   onChange={(e) =>
                     setWorkImage(URL.createObjectURL(e.target.files[0]))
                   }

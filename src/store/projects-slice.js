@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import showcase from "../assets/showwcase.png"
+import angular from "../assets/angular.png"
 
 const projectsSlice = createSlice({
     name: 'projects',
@@ -11,6 +12,13 @@ const projectsSlice = createSlice({
                 description: "A small web application that lets manage the list of showcased works",
                 image: showcase,
                 website: "https://veziv.ro/"
+            },
+            {
+                id: 2,
+                title: "Angular",
+                description: "A small web application created with Angular",
+                image: angular,
+                website: "https://angularjs.org/"
             },
         ],
     },
