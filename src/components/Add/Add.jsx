@@ -4,7 +4,14 @@ import "./Add.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { useDispatch } from "react-redux";
+import { projectsActions } from "../../store/projects-slice";
+
+import { v4 as uuidv4 } from "uuid";
+
 const Add = () => {
+  const dispatch = useDispatch();
+
   const [uploadPhoto] = useState(null);
   const [workTitle, setWorkTitle] = useState("");
   const [workDescription, setWorkDescription] = useState("");
@@ -17,6 +24,14 @@ const Add = () => {
     console.log(workTitle);
     console.log(workDescription);
     console.log(workImage);
+    dispatch(
+      projectsActions.setProjectsList({
+        id: uuidv4(),
+        title: workTitle,
+        description: workDescription,
+        image: workImage,
+      })
+    );
   };
 
   return (
