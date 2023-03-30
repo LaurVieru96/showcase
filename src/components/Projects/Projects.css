@@ -24,6 +24,7 @@
 .individual-project img {
     margin: 0 15px;
     border-radius: 10px;
+    /* object-fit: contain; */
 }
 
 .individual-project h5 {
@@ -97,4 +98,31 @@
     letter-spacing: 1px;
     cursor: pointer;
     margin-right: 5px;
+}
+
+@media only screen and (max-width:450px) {
+    .individual-project {
+        flex-direction: column;
+        width: 300px;
+
+    }
+
+    .individual-project img {
+        width: 80px;
+        height: 80px;
+        object-fit: fill;
+    }
+
+    .individual-project p {
+        width: 250px;
+    }
+
+    .individual-project h5 {
+        margin-top: 15px;
+    }
+
+    .projects-buttons {
+        margin-top: 15px;
+        flex-direction: row;
+    }
 }

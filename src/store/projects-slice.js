@@ -29,9 +29,14 @@ const projectsSlice = createSlice({
             }
             console.log(state.project)
         },
-        // setProjectsEdited(state, action) {
-
-        // }
+        deleteProject(state, action) {
+            const id = action.payload;
+            const index = state.project.findIndex((item) => item.id === id);
+            // console.log("xxxxxxxxxxx", index);
+            if (index !== -1) {
+                state.project.splice(index, 1);
+            }
+        }
     }
 })
 
