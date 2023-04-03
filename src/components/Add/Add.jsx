@@ -64,6 +64,7 @@ const Add = () => {
         <form onSubmit={handleFormSubmit}>
           <div className="add-inner-container">
             <input
+              data-testid="input-title"
               type="text"
               placeholder="Type your work title here"
               value={workTitle}
@@ -72,6 +73,7 @@ const Add = () => {
             />
             <div className="add-descr-img">
               <textarea
+                data-testid="textarea"
                 name=""
                 id=""
                 maxLength={90}
@@ -83,6 +85,7 @@ const Add = () => {
                 required
               ></textarea>
               <input
+                data-testid="input-url"
                 type="url"
                 placeholder="Add your website link"
                 value={workWebsite}
@@ -90,6 +93,7 @@ const Add = () => {
               />
               <div className="add-file">
                 <input
+                  data-testid="input-file"
                   type="file"
                   // value={workImage}
                   onChange={(e) =>
@@ -112,6 +116,7 @@ const Add = () => {
             // onClick={
             //   workTitle && workDescription && workImage ? notify : undefined
             // }
+            data-testid="submit-add-btn"
             type="submit"
           >
             Submit
